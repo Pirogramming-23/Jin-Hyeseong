@@ -119,7 +119,7 @@
             border-radius: 50%;
         }
         #header-hamburger > div, #header-notice > div, #header-naverpay > div {
-            background-image: url(./sp_main.04eb92b7.png);
+            background-image: url(./sp_main.png);
             width: 26px;
             height: 26px;
             position: relative;
@@ -588,6 +588,8 @@
                     color: rgba(8,8,8,.5);
                     display: flex;
                     justify-content: flex-start;
+                    line-height: 23px;
+                    margin-bottom: 17px;
                 }
                 #main-newstand header .bold {
                     font-weight: bold;
@@ -596,6 +598,10 @@
                 #main-newstand-gray {
                     display: flex;
                     justify-content: flex-start;
+                    height: 50px;
+                    padding: 12px 20px;
+                    background-color: var(--color_option_bg);
+                    border-radius: 4px;
                 }
                 #main-newstand a {
                     text-decoration: none;
@@ -605,6 +611,27 @@
                 }
                 #main-newstand a:hover {
                     text-decoration: underline;
+                }
+                #main-newstand-grid {
+                    display: grid;
+                    justify-content: center;
+                    align-items: center;
+                    height: 224px;
+                    grid-gap: 1px;
+                    background-color: var(--color_border_in);
+                    grid-template-rows: repeat(4, 1fr);
+                    width: 790px;
+                    grid-template-columns: repeat(6, 1fr);
+                    border: 1px solid var(--color_border_in);
+                    border-radius: 4px;
+                    margin-top: 18px;
+                }
+                #main-newstand-grid > div {
+                    height: 100%;
+                    background-color: white;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                 }
                 #main-newstand footer {
                     border-top: 1px solid var(--color_border_in);
