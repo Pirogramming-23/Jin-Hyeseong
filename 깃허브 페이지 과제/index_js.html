@@ -1,0 +1,265 @@
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        svg {
+            fill: white;
+        }
+        body {
+            background-color: #0d1117;
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            margin: 0;
+            padding: 0;
+        }
+
+        #wrap {
+            text-align: center;
+        }
+        #wrap-center {
+            width: 1385px;
+            display: inline-block;
+        }
+        #header {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: center;
+            position: relative;
+            padding: 0px 100px 0px 100px;
+            height: 72px;
+            font-size: 18px;
+        }
+        #header > svg {
+            width: 48px;
+            height: 34.5px;
+            padding-right: 12px;
+        }
+        #header > ul {
+            display: grid;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            grid-template-columns: repeat(6, 1fr);
+        }
+        #header a {
+            text-decoration: none;
+            color: inherit;
+        }
+        #header a:visited {
+            color: inherit;
+        }
+        .bu {
+            background: none;
+            border: none;
+            padding: 0;
+            margin: 0;
+            font: inherit;
+            color: inherit;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .right-buttons {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .search-box {
+            padding: 6px 12px;
+            border-radius: 6px;
+            border: 1px solid #555;
+            background-color: #1f2428;
+            color: white;
+            outline: none;
+        }
+
+        .search-box::placeholder {
+            color: #aaa;
+        }
+
+        .signin {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .signup {
+            color: white;
+            text-decoration: none;
+            border: 1px solid #888;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        .main-content {
+            display: flex;
+            padding: 100px 100px 50px 100px;
+            justify-content: center;
+            gap: 80px;
+        }
+
+        .left-text {
+            flex: 1;
+            max-width: 500px;
+        }
+
+        .left-text h1 {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+
+        .left-text p {
+            font-size: 20px;
+            line-height: 1.6;
+            color: #c9d1d9;
+        }
+
+        .right-form {
+            background-color: white;
+            border-radius: 8px;
+            padding: 32px;
+            width: 360px;
+            color: black;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .right-form label {
+            display: block;
+            font-weight: bold;
+            margin-top: 16px;
+        }
+
+        .right-form input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            background-color: #f6f8fa;
+        }
+
+        .hint {
+            font-size: 12px;
+            color: #57606a;
+            margin-top: 10px;
+        }
+
+        .signup-button {
+            margin-top: 16px;
+            width: 100%;
+            padding: 12px;
+            background-color: #2ea44f;
+            border: none;
+            border-radius: 6px;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .terms {
+            font-size: 12px;
+            color: #57606a;
+            margin-top: 16px;
+        }
+        .footer-illustration {
+            width: 100%;
+            background-color: white;
+            text-align: center;
+            padding: 0px 0 60px 0;
+            position: relative;
+        }
+
+        .footer-illustration img {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="wrap-center">
+            <div id="header">
+                <svg height="32" aria-hidden="true" viewBox="0 0 24 24" version="1.1" width="32" data-view-component="true" class="octicon octicon-mark-github v-align-middle"><path d="M12 1C5.923 1 1 5.923 1 12c0 4.867 3.149 8.979 7.521 10.436.55.096.756-.233.756-.522 0-.262-.013-1.128-.013-2.049-2.764.509-3.479-.674-3.699-1.292-.124-.317-.66-1.293-1.127-1.554-.385-.207-.936-.715-.014-.729.866-.014 1.485.797 1.691 1.128.99 1.663 2.571 1.196 3.204.907.096-.715.385-1.196.701-1.471-2.448-.275-5.005-1.224-5.005-5.432 0-1.196.426-2.186 1.128-2.956-.111-.275-.496-1.402.11-2.915 0 0 .921-.288 3.024 1.128a10.193 10.193 0 0 1 2.75-.371c.936 0 1.871.123 2.75.371 2.104-1.43 3.025-1.128 3.025-1.128.605 1.513.221 2.64.111 2.915.701.77 1.127 1.747 1.127 2.956 0 4.222-2.571 5.157-5.019 5.432.399.344.743 1.004.743 2.035 0 1.471-.014 2.654-.014 3.025 0 .289.206.632.756.522C19.851 20.979 23 16.854 23 12c0-6.077-4.922-11-11-11Z"></path></svg>
+                <ul>
+                    <li><button class="bu">Why GitHub?<svg opacity="0.5" aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-chevron-down HeaderMenu-icon ml-1"><path d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z"></path></svg></button></li>
+                    <li class="atag"><a href="#">Team</a></li>
+                    <li><a href="#">Enterprise</a></li>
+                    <li><button class="bu">Explore<svg opacity="0.5" aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-chevron-down HeaderMenu-icon ml-1"><path d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z"></path></svg></button></li>
+                    <li><a href="#">Marcketplace</a></li>
+                    <li><button class="bu">Pricing<svg opacity="0.5" aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-chevron-down HeaderMenu-icon ml-1"><path d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z"></path></svg></button></li>
+                </ul>
+                <div class="right-buttons">
+                    <input class="search-box" type="text" placeholder="Search GitHub" />
+                    <a href="#" class="signin">Sign in</a>
+                    <a href="#" class="signup">Sign up</a>
+                </div>
+                </div>
+                <div class="main-content">
+                    <div class="left-text">
+                        <h1>Built for developers</h1>
+                        <p>
+                        GitHub is a development platform inspired by the way you work.
+                        From <u>open source</u> to <u>business</u>, you can host and review code, manage projects, and build software alongside 50 million developers.
+                        </p>
+                    </div>
+                    <div class="right-form">
+                        <form>
+                            <label>Username</label>
+                            <input type="text" placeholder="Username" />
+                            <label>Email</label>
+                            <input type="email" placeholder="Email" />
+                            <label>Password</label>
+                            <input type="password" placeholder="Password" />
+                            <p class="hint">Make sure it’s at least 15 characters OR at least 8 characters including a number and a lowercase letter.
+                                <a href="#">Learn more</a>.
+                            </p>
+                            <button class="signup-button" type="submit">Sign up for GitHub</button>
+                            <p class="terms">
+                                By clicking “Sign up for GitHub”, you agree to our <a href="#">Terms of Service</a> and
+                                <a href="#">Privacy Statement</a>. We’ll occasionally send you account related emails.
+                            </p>
+                        </form>
+                    </div>
+                </div>
+                <div class="footer-illustration">
+                    <img src="./footer.webp" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelector('.signin').addEventListener('click', function (e) {
+            e.preventDefault();
+            alert('로그인 페이지로 이동합니다!');
+        });
+
+        document.querySelector('.signup').addEventListener('click', function (e) {
+            e.preventDefault();
+            alert('회원가입 페이지로 이동합니다!');
+        });
+
+        const formInputs = document.querySelectorAll('.right-form input');
+        const formBox = document.querySelector('.right-form');
+
+        formInputs.forEach(input => {
+            input.addEventListener('input', () => {
+            formBox.style.backgroundColor = '#e6f1ff'; 
+            });
+        });
+
+        document.querySelector('.signup-button').addEventListener('click', function (e) {
+            e.preventDefault();
+            alert('회원가입을 시도합니다!');
+        });
+    </script>
+</body>
+</html>
