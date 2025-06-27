@@ -185,7 +185,7 @@
     width: 20px;
     transform-origin: left;
 }
-/* ::after (아래 막대) */
+
 .menu-icon::after {
     position: absolute;
     bottom: 0;
@@ -276,7 +276,7 @@
 }
 
 
-/* --- 반응형 레이아웃 --- */
+/* 반응형 레이아웃 */
 @media (max-width: 768px) {
     .portfolio-card {
         flex-direction: column;
