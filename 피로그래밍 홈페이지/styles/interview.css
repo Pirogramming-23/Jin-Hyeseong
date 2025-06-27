@@ -1,0 +1,325 @@
+.container {
+    background-color: black;
+    color: white;
+    flex-direction: column;
+}
+#main-header {
+    height: 90px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background-color: black;
+    z-index: 1000;
+}
+#header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 100px;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+}
+.logo img {
+    width: 40px;
+    height: 40px;
+}
+.nav-links {
+    display: flex;
+    gap: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    list-style: none;
+    margin-left: auto;
+}
+
+.nav-toggle {
+    display: none; /* PC에서는 숨김 */
+}
+#header-container logo {
+    width: 40px;
+    height: 40px;
+}
+#header-container ul {
+    display: flex;
+    gap: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    flex-wrap: wrap;
+}
+#header-container ul li {
+    padding: 5px;
+}
+#main-header .selected {
+    color: #0bec12;
+}
+#interview {
+    padding: 90px 40px
+}
+/* 제목 정렬 */
+.interview-header {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+    margin: 40px auto 20px auto;
+    padding: 0 100px;
+    box-sizing: border-box;
+}
+
+.interview-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.interview-prev {
+    position: absolute;
+    right: 100px; /* 우측 여백 */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+}
+
+#interview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    }
+
+
+
+/* 카드 디자인 */
+.interview-card {
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    border-radius: 16px;
+    padding: 16px 20px;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.interview-card:hover {
+    transform: translateY(-2px);
+}
+
+.interview-card:hover .profile-img {
+    transform: scale(1.08);
+}
+
+/* 프로필 사진 */
+.profile-img {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    margin-right: 16px;
+}
+
+.card-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+/* 텍스트 콘텐츠 */
+.name {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.tag {
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 6px;
+    color: white;
+}
+.major {
+    background-color: #0077cc;
+}
+.nomajor {
+    background-color: #c54422;
+}
+
+.desc {
+    font-size: 14px;
+    color: #ddd;
+}
+
+/* 우측 메뉴 아이콘 */
+.menu-icon {
+    font-size: 24px;
+    color: #aaa;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    position: relative;
+}
+
+.menu-icon span {
+    width: 20px;
+}
+
+.menu-icon::before,
+.menu-icon::after,
+.menu-icon span {
+    content: "";
+    display: block;
+    height: 3px;
+    background: #ccc;
+    transition: transform 0.3s ease, width 0.3s ease;
+}
+
+
+.menu-icon::before {
+    position: absolute;
+    top: 0;
+    width: 20px;
+    transform-origin: left;
+}
+
+.menu-icon::after {
+    position: absolute;
+    bottom: 0;
+    width: 20px;
+    transform-origin: right;
+}
+
+.interview-card:hover .menu-icon::before {
+    transform: scaleX(0.6);
+}
+
+.interview-card:hover .menu-icon span {
+    transform: scaleX(1.0);
+}
+
+.interview-card:hover .menu-icon::after {
+    transform: scaleX(0.6);
+}
+#site-footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 0 0 0;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.footer-top {
+    max-width: 900px;
+    margin: 0 auto 30px auto;
+    }
+
+.footer-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+.footer-icons img {
+    width: 36px;
+    height: 36px;
+    background-color: black;
+    border-radius: 50%;
+    padding: 6px;
+}
+
+.footer-contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+.footer-contact img {
+    width: 28px;
+    height: 28px;
+}
+
+.footer-menu {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.footer-menu a {
+    color: white;
+    text-decoration: none;
+}
+.footer-menu span {
+    color: #aaa;
+}
+
+.footer-bottom {
+    font-size: 14px;
+    color: #ccc;
+    border-top: 1px solid #222;
+    padding-top: 10px;
+    background-color: #222;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .interview-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .card-content {
+        margin: 0;
+        margin-top: 12px;
+    }
+
+    .menu-icon {
+        align-self: flex-end;
+        margin-top: -10px;
+        margin-right: -10px;
+    }
+    #header-container {
+        padding: 0 20px;
+    }
+
+    .nav-links {
+        display: none !important;
+    }
+
+    .nav-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        margin-left: auto;
+    }
+
+    .nav-toggle span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: white;
+    }
+}

@@ -1,0 +1,338 @@
+.container {
+    background-color: black;
+    color: white;
+    flex-direction: column;
+}
+#main-header {
+    height: 90px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background-color: black;
+    z-index: 1000;
+}
+#header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 100px;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+}
+.logo img {
+    width: 40px;
+    height: 40px;
+}
+.nav-links {
+    display: flex;
+    gap: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    list-style: none;
+    margin-left: auto;
+}
+
+.nav-toggle {
+    display: none; /* PC에서는 숨김 */
+}
+#header-container logo {
+    width: 40px;
+    height: 40px;
+}
+#header-container ul {
+    display: flex;
+    gap: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    flex-wrap: wrap;
+}
+#header-container ul li {
+    padding: 5px;
+}
+#main-header .selected {
+    color: #0bec12;
+}
+#portfolio {
+    padding: 90px 40px
+}
+/* 제목 정렬 */
+.portfolio-header {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+    margin: 40px auto 20px auto;
+    padding: 0 100px;
+    box-sizing: border-box;
+}
+
+.portfolio-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.portfolio-prev {
+    position: absolute;
+    right: 100px; /* 우측 여백 */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+}
+#portfolio-grid {
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    gap: 24px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+/* 카드 */
+.portfolio-card {
+    background-color: #2e2e2e;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.2s ease;
+}
+.portfolio-card:hover {
+    transform: translateY(-2px);
+}
+
+.portfolio-card:hover .team-logo {
+    transform: scale(1.08);
+}
+/* 왼쪽 이미지 */
+.team-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    background-color: white;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* 가운데 내용 */
+.card-content {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.team-name {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.team-desc {
+    font-size: 14px;
+    color: #ccc;
+    margin: 8px 0;
+}
+
+/* 팀원 태그 */
+.team-members {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.team-members span {
+    background-color: #555;
+    padding: 6px 12px;
+    border-radius: 10px;
+    font-size: 13px;
+}
+
+.team-members .leader {
+    background-color: #00bfff;
+    color: white;
+}
+
+/* 오른쪽 메뉴 아이콘 */
+.menu-icon {
+    font-size: 24px;
+    color: #aaa;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    position: relative;
+}
+.menu-icon::before,
+.menu-icon::after,
+.menu-icon span {
+    content: "";
+    display: block;
+    height: 3px;
+    background: #ccc;
+    transition: transform 0.3s ease, width 0.3s ease;
+}
+
+.menu-icon span {
+    width: 20px;
+}
+.menu-icon::before {
+    position: absolute;
+    top: 0;
+    width: 20px;
+    transform-origin: left;
+}
+/* ::after (아래 막대) */
+.menu-icon::after {
+    position: absolute;
+    bottom: 0;
+    width: 20px;
+    transform-origin: right;
+}
+
+/* 햄버거 찌그러짐 효과 */
+.portfolio-card:hover .menu-icon::before {
+    transform: scaleX(0.6);
+}
+
+.portfolio-card:hover .menu-icon span {
+    transform: scaleX(1.0);
+}
+
+.portfolio-card:hover .menu-icon::after {
+    transform: scaleX(0.6);
+}
+
+#site-footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 0 0 0;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.footer-top {
+    max-width: 900px;
+    margin: 0 auto 30px auto;
+    }
+
+.footer-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+.footer-icons img {
+    width: 36px;
+    height: 36px;
+    background-color: black;
+    border-radius: 50%;
+    padding: 6px;
+}
+
+.footer-contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+.footer-contact img {
+    width: 28px;
+    height: 28px;
+}
+
+.footer-menu {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.footer-menu a {
+    color: white;
+    text-decoration: none;
+}
+.footer-menu span {
+    color: #aaa;
+}
+
+.footer-bottom {
+    font-size: 14px;
+    color: #ccc;
+    border-top: 1px solid #222;
+    padding-top: 10px;
+    background-color: #222;
+}
+
+
+/* --- 반응형 레이아웃 --- */
+@media (max-width: 768px) {
+    .portfolio-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 30px 20px;
+        gap: 20px;
+    }
+
+    .team-logo {
+        width: 60%;
+        max-width: 240px;
+    }
+
+    .card-content {
+        margin: 0;
+        width: 100%;
+    }
+
+    .team-name {
+        font-size: 20px;
+    }
+
+    .team-desc {
+        font-size: 13px;
+    }
+
+    .team-members {
+        justify-content: center;
+    }
+
+    .menu-icon {
+        align-self: flex-end;
+        margin-top: -10px;
+        margin-right: -10px;
+    }
+    #header-container {
+        padding: 0 20px;
+    }
+
+    .nav-links {
+        display: none !important;
+    }
+
+    .nav-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        margin-left: auto;
+    }
+
+    .nav-toggle span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: white;
+    }
+}
