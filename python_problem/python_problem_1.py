@@ -1,4 +1,5 @@
 num = 0
+
 while True:
     user_input = input("부를 숫자의 개수를 입력하세요(1, 2, 3만 입력 가능) : ")
 
@@ -15,4 +16,6 @@ while True:
         continue
     break
 
-
+for i in range(n):
+    num+=1
+    print("playerA : {0}".format(num))
