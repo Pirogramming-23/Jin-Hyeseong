@@ -1,5 +1,6 @@
 num = 0
 gameOver = False
+winA = False
 
 while(not gameOver):
     # PlayerA
@@ -50,4 +51,8 @@ while(not gameOver):
         print("playerB : {0}".format(num))
         if num==31:
             gameOver=True
+            winA=True
             break
+
+if(winA): print("playerA win!")
+else: print("playerB win!")
