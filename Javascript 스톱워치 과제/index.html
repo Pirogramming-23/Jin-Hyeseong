@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+<body>
+    <div id="container">
+        <div id="mod-toggle-section">
+            <button class="btn">타이머 모드로 전환</button>
+        </div>
+        <div id="title">
+            <h2><i class="ri-timer-fill"></i>피로그래밍 스톱워치</h2>
+            <h2 style="display: none;"><i class="ri-timer-fill"></i>피로그래밍 타이머</h2>
+        </div>
+        <div id="timer" style="display: none;">
+            <div id="time-display-timer">00:00</div>
+            <input type="number" id="min-input" placeholder="분" min="0">
+            <input type="number" id="sec-input" placeholder="초" min="0" max="60">
+            <button id="set-timer" class="btn">설정</button>
+            <div id="buttons">
+                <button class="btn start">start</button>
+                <button class="btn stop">stop</button>
+                <button class="btn reset">reset</button>
+            </div>
+        </div>
+        <div id="stopwatch">
+            <div id="time-display">00:00</div>
+            <div id="buttons">
+                <button class="btn start">start</button>
+                <button class="btn stop">stop</button>
+                <button class="btn reset">reset</button>
+            </div>
+        </div>
+        <div id="record-section">
+            <div id="record-header">
+                <div class="circle"></div>
+                <span>구간 기록</span>
+                <i class="ri-delete-bin-6-fill"></i>
+            </div>
+        </div>
+        <ul class="records">
+        </ul>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
