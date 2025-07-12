@@ -1,0 +1,111 @@
+{% extends 'base.html' %} {% block content %}
+<div class="form-wrapper">
+    <h2 class="form-title">Movie review 🍿</h2>
+    <form method="POST" action="{% if review %}{% url 'reviews_edit' pk=review.pk %}{% else %}{% url 'reviews_create' %}{% endif %}">
+        {% csrf_token %}
+        <table class="review-form-table">
+            <tr>
+                <th>제목:</th>
+                <td>
+                    <input
+                        type="text"
+                        name="title"
+                        value="{{ review.title|default:'' }}"
+                        required
+                    />
+                </td>
+            </tr>
+            <tr>
+                <th>개봉년도:</th>
+                <td>
+                    <input
+                        type="number"
+                        name="release_year"
+                        value="{{ review.release_year|default:'' }}"
+                        required
+                    />
+                </td>
+            </tr>
+            <tr>
+                <th>장르:</th>
+                <td>
+                    <select name="genre" required>
+                        <option value="Action" {% if review.genre == 'Action' %} selected {% endif %}>Action</option>
+                        <option value="Comedy" {% if review.genre == 'Comedy' %} selected {% endif %}>Comedy</option>
+                        <option value="Drama" {% if review.genre == 'Drama' %} selected {% endif %}>Drama</option>
+                        <option value="SF" {% if review.genre == 'SF' %} selected {% endif %}>SF</option>
+                        <option value="Romance" {% if review.genre == 'Romance' %} selected {% endif %}>Romance</option>
+                        <option value="Thriller" {% if review.genre == 'Thriller' %} selected {% endif %}>Thriller</option>
+                        <option value="Horror" {% if review.genre == 'Horror' %} selected {% endif %}>Horror</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>별점:</th>
+                <td>
+                    <input
+                        type="number"
+                        step="0.1"
+                        max="5"
+                        name="rating"
+                        value="{{ review.rating|default:'' }}"
+                        oninput="if (this.value > 5) this.value = 5;"
+                    />
+                    <!-- js로 5를 넘어가는 수 입력시 5 자동 입력 구현-->
+                </td>
+            </tr>
+            <tr>
+                <th>러닝타임:</th>
+                <td>
+                    <input
+                        type="number"
+                        name="running_time"
+                        value="{{ review.running_time|default:'' }}"
+                    />
+                </td>
+            </tr>
+            <tr>
+                <th>리뷰:</th>
+                <td>
+                    <textarea name="content" rows="5">
+{{ review.content|default:''}} </textarea
+                    >
+                </td>
+            </tr>
+            <tr>
+                <th>감독:</th>
+                <td>
+                    <input
+                        type="text"
+                        name="director"
+                        value="{{ review.director|default:'' }}"
+                    />
+                </td>
+            </tr>
+            <tr>
+                <th>배우:</th>
+                <td>
+                    <input
+                        type="text"
+                        name="actor"
+                        value="{{ review.actor|default:'' }}"
+                    />
+                </td>
+            </tr>
+            <tr>
+                <th>이미지 URL:</th>
+                <td>
+                    <input
+                        type="text"
+                        name="image_url"
+                        value="{{ review.image_url|default:'' }}"
+                    />
+                </td>
+            </tr>
+        </table>
+        <div class="form-button-container">
+            <button type="submit">Save</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
