@@ -1,0 +1,62 @@
+{% extends "base.html" %} {% block content %}
+<div class='idea'>
+    <h2>Idea List</h2>
+    <form method="get" id="sortForm">
+        {% csrf_token %}
+        <select name="sort" onchange="document.getElementById('sortForm').submit()">
+            <option value="latest" {% if sort == 'latest' %}selected='selected'{% endif %}>최신순</option>
+            <option value="interest" {% if sort == 'interest' %}selected='selected'{% endif %}>관심도</option>
+            <option value="title" {% if sort == 'title' %}selected='selected'{% endif %}>이름순</option>
+        </select>
+    </form>
+    <div class="idea-grid">
+        {% for idea in ideas %}
+            <div class="idea-card">
+                <div class="thumbnail">
+                    {% if idea.image %}
+                        <img src="{{ idea.image.url }}" alt="썸네일" />
+                    {% else %}
+                        <img src="" alt="썸네일"/>
+                    {% endif %}
+                </div>
+                <h3><a href="{% url 'ideas:idea_detail' idea.pk %}">{{ idea.title }}</a></h3>
+                <p>예상 개발 스택: {{ idea.devtool }}</p>
+                <p>
+                    관심도: 
+                    <button onclick="adjustInterest({{ idea.id }}, 'down')">－</button>
+                    <span id="interest-{{ idea.id }}">{{ idea.interest }}</span>
+                    <button onclick="adjustInterest({{ idea.id }}, 'up')">＋</button>
+                </p>
+
+                <!-- 찜 버튼 -->
+                <button class="star-btn" id="star-{{ idea.id }}" onclick="toggleStar({{idea.id}})">
+                    {% if idea.is_star %}
+                        ⭐
+                    {% else %}
+                        ☆
+                    {% endif %}
+                </button>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="pagination">
+        {% if ideas.has_previous %}
+            <a href="?page={{ ideas.previous_page_number }}&sort={{ sort }}">&laquo; 이전</a>
+        {% endif %}
+
+        {% for num in page_range %}
+            {% if num == ideas.number %}
+                <strong>{{ num }}</strong>
+            {% else %}
+                <a href="?page={{ num }}&sort={{ sort }}">{{ num }}</a>
+            {% endif %}
+        {% endfor %}
+
+        {% if ideas.has_next %}
+            <a href="?page={{ ideas.next_page_number }}&sort={{ sort }}">다음 &raquo;</a>
+        {% endif %}
+    </div>
+</div>
+
+
+{% endblock %}

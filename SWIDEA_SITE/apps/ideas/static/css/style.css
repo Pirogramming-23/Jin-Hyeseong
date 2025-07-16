@@ -1,0 +1,309 @@
+/* 헤더 전체 */
+body {
+    background-color: black;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Arial', sans-serif;
+    border-bottom: 1px solid white;
+}
+
+/* 왼쪽 로고 텍스트 */
+.header-left {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.header-left a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.header-left a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.header-left .highlight {
+    color: #b6ff00; /* 연두/초록 강조 */
+    margin: 0 4px;
+}
+
+/* 네비게이션 바 */
+.navbar {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.idea {
+    background-color: rgba(125,125,125);
+    margin: 0 auto;
+    max-width: 1200px;
+    height: 800px;
+}
+
+/* 페이지 헤더 */
+h2 {
+    text-align: center;
+    font-size: 36px;
+    margin: 40px 0 20px;
+    color: #fff;
+}
+
+/* 정렬 박스 */
+#sortForm {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 80px 20px;
+}
+
+#sortForm select {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: none;
+    font-size: 14px;
+}
+
+/* 카드 그리드 */
+.idea-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px 0 60px;
+}
+
+/* 개별 카드 */
+.idea-card {
+    background-color: rgba(187, 225, 235);
+    backdrop-filter: blur(4px);
+    border-radius: 16px;
+    width: 220px;
+    height: 500px;
+    padding: 16px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.idea-card:hover {
+    transform: translateY(-5px);
+}
+
+/* 썸네일 이미지 */
+.thumbnail {
+    width: 100%;
+    height: 250px;
+    background-color: #333;
+    border-radius: 12px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* 제목 링크 */
+.idea-card h3 {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid skyblue;
+}
+
+.idea-card h3 a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* 텍스트 정보 */
+.idea-card p {
+    font-size: 14px;
+    margin: 6px 0;
+}
+
+/* 찜 버튼 (오른쪽 상단) */
+.star-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    color: gold;
+}
+
+.form-wrapper {
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    color: white;
+}
+
+.form-title {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.form-desc {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+.idea-form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.form-input,
+.form-textarea,
+.form-select,
+.form-file {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.form-textarea {
+    height: 100px;
+    resize: none;
+}
+
+.submit-btn {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 12px;
+    background-color: #0f0;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.submit-btn:hover {
+    background-color: #0c0;
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination a,
+.pagination strong {
+    margin: 0 5px;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: #ddd;
+    color: #000;
+}
+
+.pagination strong {
+    font-weight: bold;
+    background-color: #aaa;
+    color: #fff;
+}
+
+.idea-detail-container,
+.idea-form-container {
+    max-width: 600px;
+    margin: 30px auto;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 16px;
+    text-align: center;
+    color: white;
+}
+
+.idea-detail-container h2,
+.idea-form-container h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.sub-text {
+    font-size: 0.9em;
+    margin-bottom: 30px;
+    color: #ccc;
+}
+
+.idea-box {
+    border: 1px solid #888;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.button-group {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.button-group button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.list-btn {
+    background-color: #95a5a6;
+    color: white;
+}
+
+.edit-btn {
+    background-color: #3498db;
+    color: white;
+}
+
+.submit-btn {
+    background-color: #27ae60;
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 20px;
+}

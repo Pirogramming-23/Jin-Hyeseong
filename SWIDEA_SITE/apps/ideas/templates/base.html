@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+        <script src="{% static 'js/main.js' %}"></script>
+        <title>SWIDEA SITE</title>
+    </head>
+    <body>
+        <header class="header">
+            <div class="header-left">
+                <a href="{% url 'ideas:idea_list' %}">
+                    My
+                    <span class="highlight">SW Idea</span>
+                    Manage
+                </a>
+            </div>
+            <nav class="navbar">
+                <a href="{% url 'ideas:idea_create' %}">아이디어 등록</a>
+                <a href="{% url 'ideas:idea_list' %}">아이디어 관리</a>
+                <a href="{% url 'devtools:devtool_create' %}">개발툴 등록</a>
+                <a href="{% url 'devtools:devtool_list' %}">개발툴 관리</a>
+            </nav>
+        </header>
+        <main>{% block content %} {% endblock %}</main>
+    </body>
+</html>

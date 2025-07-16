@@ -1,0 +1,27 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="form-wrapper">
+    <h2 class="form-title">Idea Register</h2>
+    <p class="form-desc">아이디어를 등록하고 다른 사람과 함께 공유해보세요!</p>
+
+    <form method="post" enctype="multipart/form-data" class="idea-form">
+        {% csrf_token %}
+
+        <label for="id_title">아이디어명:</label>
+        {{ form.title }}
+
+        <label for="id_image">썸네일 이미지:</label>
+        {{ form.image }}
+
+        <label for="id_content">아이디어 설명:</label>
+        {{ form.content }}
+
+        <label for="id_interest">아이디어 관심도:</label>
+        {{ form.interest }}
+
+        <label for="id_devtool">예상 개발툴:</label>
+        {{ form.devtool }}
+
+        <button type="submit" class="submit-btn">SUBMIT</button>
+    </form>
+</div>
+{% endblock %}
