@@ -1,0 +1,24 @@
+{% extends 'base_dev.html' %} {% block content %}
+
+<div class="form-wrapper">
+    <h2 class="form-title">DevTool Register</h2>
+    <p class="form-desc">
+        개발툴 정보를 입력해주세요. 사용하시는 개발툴의 정보를 적고
+        저장해주세요.
+    </p>
+
+    <form method="POST" enctype="multipart/form-data" class="dev-form">
+        {% csrf_token %}
+        <label>이름:</label>
+        {{ form.name }}
+
+        <label>종류:</label>
+        {{ form.kind }}
+
+        <label>개발툴 설명:</label>
+        {{ form.content }}
+
+        <button type="submit" class="submit-btn">SUBMIT</button>
+    </form>
+</div>
+{% endblock %}

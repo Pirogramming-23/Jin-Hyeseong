@@ -1,0 +1,24 @@
+{% extends 'base_dev.html' %} {% block content %}
+
+<div class="form-wrapper">
+    <h2 class="form-title">DevTool Detail Update</h2>
+    <p class="form-desc">
+        개발툴 세부내용 수정 페이지 입니다. 개밡툴에 대해 수정사항이 있으면
+        고쳐보아요.
+    </p>
+
+    <form method="POST" enctype="multipart/form-data" class="dev-form">
+        {% csrf_token %}
+        <label>이름:</label>
+        {{ form.name }}
+
+        <label>종류:</label>
+        {{ form.kind }}
+
+        <label>개발툴 설명:</label>
+        {{ form.content }}
+
+        <button type="submit" class="submit-btn">SUBMIT</button>
+    </form>
+</div>
+{% endblock %}

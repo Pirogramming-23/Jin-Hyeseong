@@ -1,0 +1,43 @@
+{% extends 'base_dev.html' %} {% block content %}
+
+<h2 class="title">DevTool Detail</h2>
+<p class="subtitle">
+    선택하신 개발 툴의 세부 정보와 관련된 소프트웨어 목록이 표시됩니다.
+</p>
+
+<div class="devtool-detail">
+    <h3>{{ devtool.name }}</h3>
+    <p><strong>{{ devtool.kind }}</strong></p>
+    <p>{{ devtool.content }}</p>
+
+    <hr />
+    <h4>✔️ 만들 수 있는 SW 목록</h4>
+    <ul>
+        {% for idea in ideas %}
+        <li>
+            <a href="{% url 'ideas:idea_detail' idea.id %}">{{ idea.title }}</a>
+        </li>
+        {% empty %}
+        <li>등록된 아이디어가 없습니다.</li>
+        {% endfor %}
+    </ul>
+
+    <div class="button-group">
+        <form
+            method="POST"
+            action="{% url 'devtools:devtool_delete' devtool.id %}"
+            onsubmit="return confirm('삭제할까요?');"
+        >
+            {% csrf_token %}
+            <button type="submit" class="delete-btn">삭제</button>
+        </form>
+        <a href="{% url 'devtools:devtool_list' %}" class="list-btn">목록</a>
+        <a
+            href="{% url 'devtools:devtool_update' devtool.id %}"
+            class="edit-btn"
+            >수정</a
+        >
+    </div>
+</div>
+
+{% endblock %}

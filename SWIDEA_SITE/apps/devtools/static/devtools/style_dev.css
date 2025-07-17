@@ -1,0 +1,234 @@
+/* 헤더 전체 */
+body {
+    background-color: black;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Arial', sans-serif;
+    border-bottom: 1px solid white;
+}
+
+/* 왼쪽 로고 텍스트 */
+.header-left {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.header-left a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.header-left a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.header-left .highlight {
+    color: #b6ff00; /* 연두/초록 강조 */
+    margin: 0 4px;
+}
+
+/* 네비게이션 바 */
+.navbar {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.devtool-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.devtool-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    width: 80%;
+    padding: 20px;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.devtool-item:hover {
+    transform: scale(1.02);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.devtool-item a {
+    font-size: 1.5rem;
+    color: #ffe169;
+    text-decoration: none;
+}
+
+.devtool-item a:hover {
+    text-decoration: underline;
+}
+
+.devtool-item p {
+    margin-top: 10px;
+    color: #eee;
+}
+
+.pagination {
+    margin-top: 20px;
+    color: white;
+    text-align: center;
+}
+
+.pagination a {
+    color: #ffe169;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1.2rem;
+}
+
+.pagination span {
+    font-size: 1.2rem;
+    margin: 0 10px;
+    color: white;
+}
+
+.form-wrapper {
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    color: white;
+}
+
+.form-title {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.form-desc {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+.dev-form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.form-input,
+.form-textarea,
+.form-select,
+.form-file {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.form-textarea {
+    height: 100px;
+    resize: none;
+}
+
+.submit-btn {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 12px;
+    background-color: #0f0;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.submit-btn:hover {
+    background-color: #0c0;
+}
+
+.devtool-detail {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 15px;
+    width: 80%;
+    margin: 0 auto;
+    color: white;
+}
+
+.devtool-detail h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #ffe169;
+}
+
+.devtool-detail p {
+    font-size: 1.1rem;
+}
+
+.devtool-detail ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 15px;
+}
+
+.devtool-detail ul li {
+    margin: 5px 0;
+}
+
+.devtool-detail a {
+    color: #61dafb;
+    text-decoration: none;
+}
+
+.devtool-detail .button-group {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 15px;
+}
+
+.button-group .delete-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+.button-group .list-btn,
+.button-group .edit-btn {
+    background-color: #4682b4;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+}

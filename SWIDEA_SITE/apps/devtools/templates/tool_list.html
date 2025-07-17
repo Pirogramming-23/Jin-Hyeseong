@@ -1,0 +1,26 @@
+{% extends 'base_dev.html' %} {% block content %}
+
+<h2>DevTool List</h2>
+<p>사용하는 모든 개발 툴을 확인하고, 세부사항을 클릭해보세요!</p>
+
+<div class="devtool-list">
+    {% for devtool in devtools %}
+    <div class="devtool-item">
+        <a href="{% url 'devtools:devtool_detail' devtool.id %}">
+            <strong>{{ devtool.name }}</strong> - {{ devtool.kind }}
+        </a>
+        <p>{{ devtool.content }}</p>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="pagination">
+    {% if devtools.has_previous %}
+    <a href="?page={{ devtools.previous_page_number }}">〈</a>
+    {% endif %}
+    <span>{{ devtools.number }} / {{ devtools.paginator.num_pages }}</span>
+    {% if devtools.has_next %}
+    <a href="?page={{ devtools.next_page_number }}">〉</a>
+    {% endif %}
+</div>
+{% endblock %}
