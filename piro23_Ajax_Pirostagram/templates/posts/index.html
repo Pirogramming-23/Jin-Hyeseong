@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <title>피드 • PiroInstagram</title>
+        <link rel="stylesheet" href="/static/posts/feed.css" />
+        <link rel="stylesheet" href="/static/posts/post_modal.css" />
+        <script src="/static/posts/ajax.js" defer></script>
+    </head>
+    <body>
+        <div class="feed-header">
+            <span class="feed-logo">PiroInstagram</span>
+            {% if request.user.is_authenticated %}
+            <span class="feed-user"
+                >{{ request.user.username }}님 환영합니다!</span
+            >
+            <a href="{% url 'logout' %}" class="feed-logout">로그아웃</a>
+            {% else %}
+            <a href="{% url 'login' %}" class="feed-logout">로그인</a>
+            {% endif %}
+        </div>
+        <div class="feed-container">
+            {% if request.user.is_authenticated %}
+            <button id="show-post-form-btn" class="auth-btn">
+                게시물 작성
+            </button>
+            <div id="post-modal" class="post-modal" style="display: none">
+                <div class="post-modal-content">
+                    <span class="close-modal" id="close-post-modal"
+                        >&times;</span
+                    >
+                    <form
+                        id="post-form"
+                        method="post"
+                        enctype="multipart/form-data"
+                    >
+                        {% csrf_token %}
+                        <input
+                            type="text"
+                            name="title"
+                            placeholder="제목"
+                            required
+                            class="auth-input"
+                        />
+                        <textarea
+                            name="content"
+                            placeholder="내용"
+                            required
+                            class="auth-input"
+                        ></textarea>
+                        <input
+                            type="file"
+                            name="image"
+                            accept="image/*"
+                            class="auth-input"
+                        />
+                        <button type="submit" class="auth-btn">
+                            게시물 등록
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <hr />
+            {% endif %} {% if posts %} {% for post in posts %}
+            <div class="post-card" data-post-id="{{ post.id }}">
+                {% if post.image %}
+                <img
+                    src="{{ post.image.url }}"
+                    class="post-image"
+                    alt="post image"
+                />
+                {% endif %}
+                <div class="post-title">{{ post.title }}</div>
+                <div class="post-content">{{ post.content }}</div>
+                <div class="post-date">
+                    {{ post.created_at|date:'Y-m-d H:i' }}
+                </div>
+                <div class="post-actions">
+                    <button
+                        class="like-btn"
+                        data-post-id="{{ post.id }}"
+                        {%
+                        if
+                        not
+                        request.user.is_authenticated
+                        %}disabled{%
+                        endif
+                        %}
+                    >
+                        {% if request.user.is_authenticated and request.user in post.likes.all %} ❤️ {% else %} 🤍 {% endif %}
+                        <span class="like-count">{{ post.likes.count }}</span>
+                    </button>
+                    {% if not request.user.is_authenticated %}
+                    <div class="login-required">
+                        좋아요는 로그인 후 이용할 수 있습니다.
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="comment-section">
+                    <div class="comment-list">
+                        {% for comment in post.comments.all %}
+                        <div
+                            class="comment-item"
+                            data-comment-id="{{ comment.id }}"
+                        >
+                            <b>{{ comment.user.username }}</b>: {{comment.content }}
+                            <span class="comment-date"
+                                >{{ comment.created_at|date:'Y-m-d H:i' }}</span
+                            >
+                            {% if request.user == comment.user %}
+                            <button
+                                class="delete-comment-btn"
+                                data-comment-id="{{ comment.id }}"
+                            >
+                                삭제
+                            </button>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% if request.user.is_authenticated %}
+                    <form class="comment-form" data-post-id="{{ post.id }}">
+                        {% csrf_token %}
+                        <input
+                            type="text"
+                            name="content"
+                            placeholder="댓글 달기..."
+                            class="comment-input"
+                            required
+                        />
+                        <button type="submit" class="comment-btn">
+                            댓글 작성
+                        </button>
+                    </form>
+                    {% else %}
+                    <div class="login-required">
+                        댓글 작성은 로그인 후 이용할 수 있습니다.
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %} {% else %}
+            <div class="no-posts">아직 게시물이 없습니다.</div>
+            {% endif %}
+        </div>
+    </body>
+</html>

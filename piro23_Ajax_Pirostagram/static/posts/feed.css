@@ -1,0 +1,144 @@
+body {
+    background: #fafafa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.feed-header {
+    width: 100%;
+    max-width: 600px;
+    margin: 30px auto 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    border: 1px solid #dbdbdb;
+    border-radius: 8px 8px 0 0;
+    padding: 18px 32px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.feed-logo {
+    font-family: 'Grand Hotel', cursive, 'Segoe UI', sans-serif;
+    font-size: 2rem;
+    color: #262626;
+    letter-spacing: 2px;
+}
+.feed-user {
+    font-size: 1.1rem;
+    color: #262626;
+}
+.feed-logout {
+    color: #3897f0;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+}
+.feed-logout:hover {
+    text-decoration: underline;
+}
+.feed-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    background: #fff;
+    border: 1px solid #dbdbdb;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    padding: 32px 32px 24px 32px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.post-card {
+    border-bottom: 1px solid #efefef;
+    padding: 18px 0 18px 0;
+    margin-bottom: 12px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+.post-image {
+    width: 100%;
+    max-height: 320px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+.post-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #262626;
+}
+.post-content {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 6px;
+}
+.post-date {
+    font-size: 0.92rem;
+    color: #999;
+}
+.no-posts {
+    text-align: center;
+    color: #999;
+    font-size: 1.1rem;
+    margin-top: 40px;
+}
+.auth-btn {
+    width: 100%;
+    padding: 10px;
+    background: #3897f0;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    transition: background 0.2s;
+}
+.auth-btn:hover {
+    background: #1877f2;
+}
+.auth-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    background: #fafafa;
+    font-size: 1rem;
+    margin-bottom: 6px;
+}
+.comment-section {
+    margin-top: 10px;
+}
+.comment-list {
+    margin-bottom: 8px;
+}
+.comment-item {
+    font-size: 0.98rem;
+    margin-bottom: 4px;
+    padding: 2px 0;
+}
+.comment-date {
+    color: #bbb;
+    font-size: 0.92rem;
+    margin-left: 6px;
+}
+.delete-comment-btn {
+    background: none;
+    border: none;
+    color: #ed4956;
+    font-size: 0.95rem;
+    cursor: pointer;
+    margin-left: 8px;
+}
+.delete-comment-btn:hover {
+    text-decoration: underline;
+}
+.login-required {
+    color: #ed4956;
+    font-size: 0.97rem;
+    margin-top: 8px;
+    margin-bottom: 0;
+} 
